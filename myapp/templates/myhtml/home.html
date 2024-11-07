@@ -262,37 +262,50 @@
       </div>
 
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-        <form action="#" class="row g-lg-3 gy-3">
+        <form
+          method="POST"
+          action="{% url 'contact' %}"
+          class="row g-lg-3 gy-3"
+        >
+          {% csrf_token %}
           <div class="form-group col-md-6">
             <input
               type="text"
+              name="name"
               class="form-control"
               id="exampleInputName"
               placeholder="Enter your name"
+              required
             />
           </div>
           <div class="form-group col-md-6">
             <input
               type="email"
+              name="email"
               class="form-control"
               id="exampleInputEmail1"
               placeholder="Enter your email"
+              required
             />
           </div>
           <div class="form-group col-12">
             <input
               type="text"
+              name="subject"
               class="form-control"
               id="exampleInputEmail1"
               placeholder="Enter Subject"
+              required
             />
           </div>
           <div class="form-group col-12">
             <textarea
               class="form-control"
+              name="textareas"
               placeholder="Enter Your message"
               id="floatingTextarea2"
               style="height: 100px"
+              required
             ></textarea>
           </div>
           <div class="form-group col-12 d-grid">
@@ -305,3 +318,10 @@
 </section>
 <!-- CONTACT SECTION ENDS -->
 {% endblock content %}
+{% if messages %} {% for message in messages %}
+<script>
+  alertify.set("notifier", "position", "top-right");
+  alertify.success("{{message}}");
+</script>
+
+{% endfor %} {% endif %}

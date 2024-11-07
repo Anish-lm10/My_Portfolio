@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<!-- WORKS SECTION STARTS -->
+<section class="px-lg-5 full-width">
+  <div class="container">
+    <div class="row pb-4" data-aos="fade-up">
+      <div class="col-lg-8">
+        <h6>WORKS</h6>
+        <h1>My Projects</h1>
+      </div>
+    </div>
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
+      {% for i in data %}
+
+      <div class="col-md-6">
+        <div class="rounded-4 card-custom shadow-effect">
+          <div class="rounded-4 card-custom-image">
+            <img class="rounded-4" src="{{i.image.url}}" alt="card" />
+          </div>
+          <div class="p-4 card-custom-content">
+            <h4>{{i.work_title}}</h4>
+            <p class="text-truncate">{{i.description}}</p>
+            <a
+              href="https://github.com/Anish-lm10"
+              target="_blank"
+              class="link-custom"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+      <!-- <div class="col-md-6">
+                <div class="rounded-4 card-custom shadow-effect">
+                    <div class="rounded-4 card-custom-image">
+                        <img class="rounded-4" src="{% static 'images/sem7.png' %}" alt="card">
+                    </div>
+                    <div class="p-4 card-custom-content">
+                        <h4>JobJourney - 7th Semster Project Work</h4>
+                        <p>JobJourney is a Comprehensive Jobmarketplace Platform in Nepal, with features like Job Application Tracking, Resume Builder and Many More.</p>
+                        <a href="#" class="link-custom">Read More</a>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+  </div>
+</section>
+<!-- WORKS SECTION ENDS -->
+{% endblock content %}

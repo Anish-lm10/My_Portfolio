@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<!-- ABOUT SECTION STARTS -->
+<section class="px-lg-5 full-width">
+  <div class="container">
+    <div class="row pb-4" data-aos="fade-up">
+      <div class="col-lg-8">
+        <h6>ABOUT</h6>
+        <h1>My Education & Skills</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Education</h3>
+        <div class="row gy-4 mb-3">
+          {% for i in data %}
+          <div class="col-12">
+            <div class="card-custom p-3 rounded-4 shadow-effect">
+              <h5>{{i.subject}}</h5>
+              <p>{{i.college_institute_year}}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+          <!-- <div class="col-12"  data-aos="fade-up" data-aos-delay="500" >
+                            <div class="card-custom p-3 rounded-4 shadow-effect">
+                                <h5>Python with Django
+                                </h5>
+                                <p>Sipalaya InfoTech (Three-Month Traning, 2024) </p>
+                            </div>
+                        </div> -->
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="col-lg-6">
+        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Skills</h3>
+        <div class="skill rounded-4 shadow-effect" data-aos="fade-up">
+          <div class="skill-box">
+            <span class="skill-title">Python with Django</span>
+            <div class="skill-bar">
+              <span class="skill-per python">
+                <span class="tool">90%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">API Development</span>
+            <div class="skill-bar">
+              <span class="skill-per rest">
+                <span class="tool">80%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">PostgreSQL</span>
+            <div class="skill-bar">
+              <span class="skill-per rest">
+                <span class="tool">80%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Git/Github</span>
+            <div class="skill-bar">
+              <span class="skill-per git">
+                <span class="tool">90%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Data Structure and Algorithm</span>
+            <div class="skill-bar">
+              <span class="skill-per data">
+                <span class="tool">70%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Task Automation</span>
+            <div class="skill-bar">
+              <span class="skill-per task">
+                <span class="tool">35%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Devops</span>
+            <div class="skill-bar">
+              <span class="skill-per devops">
+                <span class="tool">25%</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ABOUT SECTION ENDS -->
+{% endblock content %}

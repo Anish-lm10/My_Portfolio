@@ -1,0 +1,307 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<!-- HOME SECTION STARTS -->
+<section class="px-lg-5 full-width">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <h1 class="display-4 fw-bold text-white" data-aos="fade-up">
+          I'M A <span class="text-info">WEB DEVELOPER</span> FROM BUTWAL, NEPAL
+        </h1>
+        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
+          I am Anish Nepal, a web developer specializing in backend development,
+          Django, and API design. I focus on creating optimized, scalable
+          solutions with an emphasis on automation and efficiency.
+        </p>
+        <div data-aos="fade-up" data-aos-delay="600">
+          <a href="{% url 'download_cv' %}" class="btn btn-outline-info me-3"
+            >Download CV</a
+          >
+          <a href="tel:+977 9867580175" target="_blank" class="link-custom"
+            >Call: +977 9867580175</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- HOME SECTION ENDS -->
+
+<!-- ABOUT SECTION STARTS -->
+<section class="px-lg-5 full-width">
+  <div class="container">
+    <div class="row pb-4" data-aos="fade-up">
+      <div class="col-lg-8">
+        <h6>ABOUT</h6>
+        <h1>My Education & Skills</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Education</h3>
+        <div class="row gy-4 mb-3">
+          {% for i in data %}
+
+          <div class="col-12" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-custom p-3 rounded-4 shadow-effect">
+              <h5>{{i.subject}}</h5>
+              <p>{{i.college_institute_year}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="col-lg-6">
+        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Skills</h3>
+        <div class="skill rounded-4 shadow-effect" data-aos="fade-up">
+          <div class="skill-box">
+            <span class="skill-title">Python with Django</span>
+            <div class="skill-bar">
+              <span class="skill-per python">
+                <span class="tool">90%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">API Development</span>
+            <div class="skill-bar">
+              <span class="skill-per rest">
+                <span class="tool">80%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">PostgreSQL</span>
+            <div class="skill-bar">
+              <span class="skill-per rest">
+                <span class="tool">80%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Git/Github</span>
+            <div class="skill-bar">
+              <span class="skill-per git">
+                <span class="tool">90%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Data Structure and Algorithm</span>
+            <div class="skill-bar">
+              <span class="skill-per data">
+                <span class="tool">70%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Task Automation</span>
+            <div class="skill-bar">
+              <span class="skill-per task">
+                <span class="tool">35%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <span class="skill-title">Devops</span>
+            <div class="skill-bar">
+              <span class="skill-per devops">
+                <span class="tool">25%</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ABOUT SECTION ENDS -->
+
+<!-- Services SECTION STARTS -->
+<section class="py-lg-5 full-width">
+  <div class="container">
+    <div class="row pb-4" data-aos="fade-up">
+      <div class="col-lg-8">
+        <h6>SERVICES</h6>
+        <h1>Services That I Provide</h1>
+      </div>
+    </div>
+    <div class="row gy-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="service p-4 rounded-3 d-flex flex-column justify-content-center align-items-center bg-base shadow-effect"
+        >
+          <div class="iconbox rounded-4">
+            <i class="las la-server"></i>
+          </div>
+          <h4 class="mt-4 mb-2">API Development</h4>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="service p-4 rounded-3 d-flex flex-column justify-content-center align-items-center bg-base shadow-effect"
+        >
+          <div class="iconbox rounded-4">
+            <i class="las la-database"></i>
+          </div>
+          <h4 class="mt-4 mb-2">Real-Time Features</h4>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="service p-4 rounded-3 d-flex flex-column justify-content-center align-items-center bg-base shadow-effect"
+        >
+          <div class="iconbox rounded-4">
+            <i class="las la-database"></i>
+          </div>
+          <h4 class="mt-4 mb-2">Data Validation</h4>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="service p-4 rounded-3 d-flex flex-column justify-content-center align-items-center bg-base shadow-effect"
+        >
+          <div class="iconbox rounded-4">
+            <i class="las la-cogs"></i>
+          </div>
+          <h4 class="mt-4 mb-2 text-center">Automation and Scripting</h4>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="service p-4 rounded-3 d-flex flex-column justify-content-center align-items-center bg-base shadow-effect"
+        >
+          <div class="iconbox rounded-4">
+            <i class="las la-database"></i>
+          </div>
+          <h4 class="mt-4 mb-2 text-center">Deployment and DevOps Support</h4>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="service p-4 rounded-3 d-flex flex-column justify-content-center align-items-center bg-base shadow-effect"
+        >
+          <div class="iconbox rounded-4">
+            <i class="las la-database"></i>
+          </div>
+          <h4 class="mt-4 mb-2 text-center">Database Design & Optimization</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Services SECTION ENDS -->
+
+<!-- WORKS SECTION STARTS -->
+<section class="px-lg-5 full-width">
+  <div class="container">
+    <div class="row pb-4" data-aos="fade-up">
+      <div class="col-lg-8">
+        <h6>WORKS</h6>
+        <h1>My Projects</h1>
+      </div>
+    </div>
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
+      {% for i in data1 %}
+      <div class="col-md-6">
+        <div class="rounded-4 card-custom shadow-effect">
+          <div class="rounded-4 card-custom-image">
+            <img class="rounded-4" src="{{i.image.url}}" alt="card" />
+          </div>
+          <div class="p-4 card-custom-content">
+            <h4>{{i.work_title}}</h4>
+            <p class="text-truncate">{{i.description}}</p>
+            <a
+              href="https://github.com/Anish-lm10"
+              target="_blank"
+              class="link-custom"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- <div class="col-md-6">
+                <div class="rounded-4 card-custom shadow-effect">
+                    <div class="rounded-4 card-custom-image">
+                        <img class="rounded-4" src="{% static 'images/sem7.png' %}" alt="card">
+                    </div>
+                    <div class="p-4 card-custom-content">
+                        <h4>JobJourney - 7th Semster Project Work</h4>
+                        <p>JobJourney is a Comprehensive Jobmarketplace Platform in Nepal, with features like Job Application Tracking, Resume Builder and Many More.</p>
+                        <a href="#" class="link-custom">Read More</a>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+  </div>
+</section>
+<!-- WORKS SECTION ENDS -->
+
+<!-- CONTACT SECTION STARTS -->
+<section class="px-lg-5 full-width">
+  <div class="container">
+    <div class="row justify-content-center text-center" data-aos="fade-up">
+      <div class="col-lg-8 pb-4">
+        <h6>CONTACT</h6>
+        <h1>Interested in working together? Let's talk</h1>
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+        <form action="#" class="row g-lg-3 gy-3">
+          <div class="form-group col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputName"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group col-12">
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Enter Subject"
+            />
+          </div>
+          <div class="form-group col-12">
+            <textarea
+              class="form-control"
+              placeholder="Enter Your message"
+              id="floatingTextarea2"
+              style="height: 100px"
+            ></textarea>
+          </div>
+          <div class="form-group col-12 d-grid">
+            <button type="submit" class="btn btn-info">Contact Me</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT SECTION ENDS -->
+{% endblock content %}

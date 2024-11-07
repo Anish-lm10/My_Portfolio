@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+:root {
+    --sidebar-width: 240px;
+    --font-base: "Bai Jamjuree";
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: var(--font-base), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: aqua;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.4s ease;
+    color: aqua;
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+img {
+    width: 100%;
+}
+
+.full-width {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 3px solid rgb(255, 255, 255, 0.3);
+}
+
+.bg-base {
+    background-color: #1c1c1c;
+}
+
+.shadow-effect {
+    transition: all 0.4s;
+}
+
+.shadow-effect:hover {
+    box-shadow: -6px 6px 0 0 aqua;
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    background-color: aqua;
+    color: black;
+
+
+}
+
+.card-custom {
+    background-color: #1c1c1c;
+}
+
+
+form .form-control {
+    background-color: #ddfeff;
+    border-color: aqua;
+}
+
+.social-links {
+    font-size: 33px;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1c1c1c;
+}
+
+.navbar .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.navbar .nav-link:hover {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: aqua;
+    border-bottom: 5px solid aqua;
+}
+
+.active {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: aqua;
+    border-bottom: 5px solid aqua;
+}
+
+.skill {
+    background-color: #1c1c1c;
+    padding: 10px 20px;
+}
+
+.skill .skill-box {
+    margin: 10px 0;
+}
+
+.skill-box .skill-title {
+    display: block;
+    font-weight: 800;
+    color: white;
+}
+
+.skill-box .skill-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgb(255, 255, 255);
+}
+
+.skill-bar .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 90%;
+    border-radius: 6px;
+    background: aqua;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+.skill-per.python {
+    animation-delay: 0.9s;
+    width: 90%;
+}
+
+.skill-per.rest {
+    animation-delay: 0.9s;
+    width: 80%;
+}
+
+.skill-per.git {
+    animation-delay: 0.9s;
+    width: 90%;
+}
+
+.skill-per.data {
+    animation-delay: 0.9s;
+    width: 60%;
+}
+
+.skill-per.task {
+    animation-delay: 0.9s;
+    width: 35%;
+}
+
+.skill-per.devops {
+    animation-delay: 0.9s;
+    width: 25%;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.skill-per .tool {
+    position: relative;
+    right: -400px;
+    top: -28px;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+}
+
+.tool{
+    font-size: 10px;
+}
+
+
+
+
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidebar-width);
+        background: #1c1c1c;
+        /* background: linear-gradient(to right, rgba(151, 157, 156, 0.9), rgba(66, 163, 166, 0.9)), */
+        /* url("{% static './images/bgnav.png' %}"); */
+        /* background-size: cover; */
+        /* background-position: center; */
+    }
+
+    .navbar-brand img {
+        border: 8px solid aquamarine;
+    }
+
+    /* Content wrapper */
+    #content-wrapper {
+        padding-left: var(--sidebar-width);
+
+    }
+
+}
+
+/* btns */
+.btn {
+    padding: 15px 30px;
+    font-weight: 700;
+}
+
+.link-custom {
+    font-weight: 700;
+    position: relative;
+}
+
+.link-custom:hover {
+    padding-left: 5px;
+    border-left: 7px solid greenyellow;
+    transition: all 0.1s ease;
+}

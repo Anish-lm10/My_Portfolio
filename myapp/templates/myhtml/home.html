@@ -318,10 +318,3 @@
 </section>
 <!-- CONTACT SECTION ENDS -->
 {% endblock content %}
-{% if messages %} {% for message in messages %}
-<script>
-  alertify.set("notifier", "position", "top-right");
-  alertify.success("{{message}}");
-</script>
-
-{% endfor %} {% endif %}

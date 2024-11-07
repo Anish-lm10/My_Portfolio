@@ -9,6 +9,7 @@
       </div>
 
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+       
         <form
           method="POST"
           action="{% url 'contact' %}"
@@ -64,10 +65,4 @@
   </div>
 </section>
 <!-- CONTACT SECTION ENDS -->
-{% endblock content %} {% if messages %} {% for message in messages %}
-<script>
-  alertify.set("notifier", "position", "top-right");
-  alertify.success("{{message}}");
-</script>
-
-{% endfor %} {% endif %}
+{% endblock content %}

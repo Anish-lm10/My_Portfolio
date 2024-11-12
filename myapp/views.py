@@ -3,7 +3,7 @@ import re
 from django.http import FileResponse
 from django.conf import settings
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mail,EmailMessage
 from django.shortcuts import render, redirect
 from datetime import datetime
 from .models import *
@@ -37,23 +37,23 @@ def works(request):
 def contact(request):
     if request.method == "POST":
         name = request.POST.get("name")
-        email = request.POST.get("email")
+        emails = request.POST.get("email")
         subject = request.POST.get("subject")
         textareas = request.POST.get("textareas")
 
-        if not re.match(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", email):
+        if not re.match(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", emails):
             messages.error(request, "Invalid email")
             return redirect("contact")
         else:
             try:
-                send_mail(
-                    subject,  # Subject of the email
-                    textareas,  # The message/content of the email
-                    email,  # Sender's email address
-                    [
-                        "anishnepal000@gmail.com"
-                    ],  # Receiver's email address (could be a list of email addresses)
-                )
+                email_message = EmailMessage(
+                subject=subject,
+                body=textareas,
+                from_email="anishnepal000@gmail.com",  # Your verified email address
+                to=["anishnepal000@gmail.com"],  # Recipient's email address
+                headers={"Reply-To": emails}  # User's email in Reply-To header
+            )
+                email_message.send(fail_silently=False)
                 messages.success(request, "Email has been sent!!")
                 return redirect("home")
             except Exception as e:
